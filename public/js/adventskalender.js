@@ -56,14 +56,16 @@ jQuery(document).ready(function($) {
       }
   // Hintergrundbild für den Adventskalender festlegen
   function setCalendarBackground() {
-      const adventCalendar = document.querySelector('.advent-calendar');
-      const windowWidth = window.innerWidth;
+    if (document.querySelector('.advent-calendar') !== null) {
+        const adventCalendar = document.querySelector('.advent-calendar');
+        const windowWidth = window.innerWidth;
 
-      if (windowWidth >= 992) {
-          adventCalendar.style.backgroundImage = `url('${backgroundImageUrlLarge}')`;
-      } else {
-          adventCalendar.style.backgroundImage = `url('${backgroundImageUrlSmall}')`;
-      }
+        if (windowWidth >= 992) {
+            adventCalendar.style.backgroundImage = `url('${backgroundImageUrlLarge}')`;
+        } else {
+            adventCalendar.style.backgroundImage = `url('${backgroundImageUrlSmall}')`;
+        }
+    }
   }
 
   setCalendarBackground();
